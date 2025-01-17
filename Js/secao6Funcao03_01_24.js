@@ -410,6 +410,79 @@ const Carro = {preco :31212,desc:0.20}
 console.log(getPreco.call(Carro,0.17,'$'))
 console.log(getPreco.apply(global,[0.17,'$']))
 
-//112. Comparação entre string de números
+ 
 
 //113. Lista de exercícios: Fundamentos, Estruturas de controle e Funções
+
+/* 01) Crie uma função que dado dois valores (passados como parâmetros) mostre no console a soma, subtração, 
+multiplicação e divisão desses valores.
+*/ 
+const valores = function (x, y) {
+    return console.log(`subtração: ${x - y} soma: ${x + y} multiplicação: ${x * y} divisão: ${x / y} `) 
+}
+
+valores(2,2)
+
+/* 
+02) Os triângulos podem ser classificados em 3 tipos quanto ao tamanho de seus lados:
+Equilátero: Os três lados são iguais. Isósceles: Dois lados iguais. Escaleno: Todos os lados são diferentes.
+Crie uma função que recebe os comprimentos dos três lados de um triângulo e retorne sua classificação quanto
+ao tamanho de seus lados. (Neste exemplo deve-se abstrair as condições matemáticas de existência de um
+triângulo).
+*/
+
+const triangulo = function(x,y,z){
+    let resultado = ''
+
+    if(x == y == z){
+        resultado = 'Equilátero'
+    }else if(x == y|| x == z || y ==z){
+        resultado = 'Isósceles'
+    }else if(x != y != z){
+        resultado = 'Escaleno'
+    }
+    return resultado
+}
+console.log(triangulo(2,1,3))
+
+//03) Crie uma função que recebe dois parâmetros, base e expoente, e retorne a base elevada ao expoente.
+
+const elevar = function(base,expoente){
+    return console.log(base ** expoente)
+
+}
+
+elevar(2,10)
+
+/*04) Crie uma função que irá receber dois valores, o dividendo e o divisor. A função deverá imprimir o resultado
+e o resto da divisão destes dois valores. */
+
+const dividir = function(dividendo,divisor){    
+        return console.log(`resultado: ${dividendo/divisor} resto: ${dividendo%divisor}`)
+
+}
+dividir(895,50)
+
+/*
+05) Lidar com números em JavaScript pode dar muita dor de cabeça. Você já viu o que acontece quando faz o
+seguinte comando no console: console.log(0.1 + 0.2); O resultado será: 0.30000000000000004. Outra coisa
+importante de observar, é o fato que o ponto é utilizado no lugar da vírgula e vice versa. Com isso, vamos fazer
+um exercício simples para mostrar dinheiro sempre da forma correta. Desenvolva uma função JavaScript para
+que ela receba um valor como 0.30000000000000004 e retorne R$0,30 (observe a vírgula e o ponto).
+*/
+
+console.log(0.1 + 0.2);
+
+function arredondar (valor){
+    let valorcorrigido = Math.round(valor *10)/10
+    return console.log(`R$ ${valorcorrigido}`)
+}
+
+arredondar(0.1 + 0.2)
+
+/*
+06) Elabore duas funções que recebem três parâmetros: capital inicial, taxa de juros e tempo de aplicação. A
+primeira função retornará o montante da aplicação financeira sob o regime de juros simples e a segunda
+retornará o valor da aplicação sob o regime de juros compostos
+*/
+

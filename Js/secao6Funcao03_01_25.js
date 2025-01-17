@@ -486,3 +486,51 @@ primeira função retornará o montante da aplicação financeira sob o regime d
 retornará o valor da aplicação sob o regime de juros compostos
 */
 
+const aplicacao = function (capInicial, taxJuros, tempo){
+    jurosSimples = capInicial * taxJuros * tempo
+     
+     MSimples = () => console.log(`montante com juros simples: ${capInicial + jurosSimples}`) 
+     MComposto = () => console.log(`montante com juros composto: ${capInicial + (1 + taxJuros)**tempo}`) 
+     MComposto()
+     MSimples()
+
+} 
+
+aplicacao(1000,0.5,24)
+
+/*
+07) Uma das vantagens da programação é a automatização de tarefas que não gostamos de realizar. Dito isto,
+elabore uma função cujo objetivo é resolver a fórmula de Bhaskara. Para isso, sua função deve receber três
+parâmetros, “ax2”, “bx” e “c”, de tal modo que na equação: 3x² - 5x + 12 os valores seriam respectivamente: 3,
+-5, 12. Como retorno deve ser passado um vetor que tem 2 valores um para cada possível resultado, mesmo
+que os resultados sejam iguais. Caso o delta seja negativo, retorne, ao invés do vetor, um string com a frase:
+“Delta é negativo”.
+*/
+
+const Bhaskara = function(a,b,c){
+   // formula = a*x**2 + b*x + c
+    delta = b**2 - 4*a*c
+    if(delta<0){
+        return console.log('Delta é negativo')
+    }else{
+        return console.log(`valor: ${delta}`)
+    }
+}
+
+Bhaskara(3,5,12)
+
+/*
+08) Pedro joga N jogos de basquete por temporada. Para saber como está ele está progredindo, ele mantém
+registro de todos os as pontuações feitas por jogo. Após cada jogo ele anota no novo valor e confere se o
+mesmo é maior ou menor que seu melhor e pior desempenho. Dada uma lista string = “pontuação1 pontuação2
+pontuação3 etc..”, escreva uma função que ao recebê-la irá comparar os valores um a um e irá retornar um
+vetor com o número de vezes que ele bateu seu recorde de maior número de pontos e quando fez seu pior
+jogo. (Número do pior jogo).
+Obs.: O primeiro jogo não conta como novo recorde do melhor.
+Exemplo:
+String: “10 20 20 8 25 3 0 30 1”
+Retorno: [3, 7] (Significa que ele bateu três vezes seu recorde de melhor pontuação e a pior pontuação
+aconteceu no sétimo jogo.)
+
+*/
+
